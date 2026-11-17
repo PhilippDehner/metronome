@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Metronom</title>
+  <meta name="description" content="Einfaches Metronom als installierbare Web-App">
+  <meta name="theme-color" content="#16181d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Metronom">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div id="beats" class="beats" aria-hidden="true"></div>
+
+    <section class="tempo">
+      <div class="bpm"><span id="bpm-value">120</span><small>BPM</small></div>
+
+      <div class="fine">
+        <button id="minus" class="round" aria-label="Tempo minus 1">−1</button>
+        <input id="slider" type="range" min="30" max="250" step="1" value="120" aria-label="Tempo">
+        <button id="plus" class="round" aria-label="Tempo plus 1">+1</button>
+      </div>
+
+      <div id="swiper" class="swiper" role="slider" tabindex="0"
+           aria-label="Tempo in 5er-Schritten" aria-valuemin="30" aria-valuemax="250" aria-valuenow="120">
+        <div id="swiper-track" class="swiper-track"></div>
+        <span class="swiper-label">‹ wischen ±5 ›</span>
+      </div>
+    </section>
+
+    <section class="options">
+      <label class="field">
+        <span>Taktart</span>
+        <select id="meter">
+          <option value="1">1/4</option>
+          <option value="2">2/4</option>
+          <option value="3">3/4</option>
+          <option value="4" selected>4/4</option>
+          <option value="5">5/4</option>
+          <option value="6">6/8</option>
+          <option value="7">7/8</option>
+        </select>
+      </label>
+      <label class="field toggle">
+        <span>Akzent</span>
+        <input id="accent" type="checkbox" checked>
+      </label>
+    </section>
+
+    <section class="actions">
+      <button id="tap" class="btn secondary">Tap</button>
+      <button id="start" class="btn primary">Start</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
