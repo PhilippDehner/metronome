@@ -1,9 +1,11 @@
-const CACHE = 'metronome-v1';
+importScripts('version.js');
+const CACHE = `metronome-${self.APP_VERSION}`;
 const ASSETS = [
   './',
   'index.html',
   'style.css',
   'app.js',
+  'version.js',
   'manifest.webmanifest',
   'icons/icon.svg',
   'icons/icon-192.png',

@@ -210,6 +210,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ---------- Init ----------
+$('version').textContent = self.APP_VERSION;
 els.meter.value = String(state.beats);
 els.accent.checked = state.accent;
 setBpm(state.bpm);

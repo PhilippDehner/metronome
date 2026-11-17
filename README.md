@@ -16,3 +16,8 @@ python3 -m http.server 8000
 
 GitHub Pages via `.github/workflows/pages.yml` (bei Push auf `main`).
 Einmalig in den Repo-Einstellungen: *Settings → Pages → Source: GitHub Actions*.
+
+## Version
+
+Die Version steht in `version.js` und wird in der App unten angezeigt.
+Bei jeder Änderung erhöhen – dadurch lädt der Service Worker die neuen Dateien in den Cache.
