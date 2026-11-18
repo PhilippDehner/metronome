@@ -142,19 +142,6 @@ html, body {
 .btn.secondary { flex: 1; background: var(--surface-2); color: var(--text); }
 .btn.secondary:active { background: var(--accent); color: #000; }
 
-/* Update-Hinweis */
-.update {
-  border: none;
-  border-radius: 12px;
-  padding: 12px 16px;
-  background: var(--accent);
-  color: #000;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.update[hidden] { display: none; }
-
 .version {
   text-align: center;
   color: var(--muted);
