@@ -20,4 +20,5 @@ Einmalig in den Repo-Einstellungen: *Settings → Pages → Source: GitHub Actio
 ## Version
 
 Die Version steht in `version.js` und wird in der App unten angezeigt.
-Bei jeder Änderung erhöhen – dadurch lädt der Service Worker die neuen Dateien in den Cache.
+Bei jeder Änderung erhöhen – dadurch lädt der Service Worker die neuen Dateien in den Cache,
+und in bereits geöffneten Apps erscheint der Hinweis „Neue Version verfügbar – tippen zum Neuladen“.
