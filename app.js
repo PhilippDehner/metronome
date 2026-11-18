@@ -111,13 +111,23 @@ function highlight(beat) {
   [...els.beats.children].forEach((d, i) => d.classList.toggle('on', i === beat));
 }
 
+let litAt = null;
+
 function draw() {
   if (!state.running) return;
   let beat = null;
   while (visualQueue.length && visualQueue[0].time <= ctx.currentTime) {
-    beat = visualQueue.shift().beat;
+    const item = visualQueue.shift();
+    beat = item.beat;
+    litAt = item.time;
   }
-  if (beat !== null) highlight(beat);
+  if (beat !== null) {
+    highlight(beat);
+  } else if (state.beats === 1 && litAt !== null && ctx.currentTime - litAt >= 30 / state.bpm) {
+    // Bei 1/1 nach halbem Schlag wieder ausschalten, damit es blinkt
+    highlight(-1);
+    litAt = null;
+  }
   requestAnimationFrame(draw);
 }
 
