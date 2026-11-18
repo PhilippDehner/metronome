@@ -3,7 +3,7 @@
 Einfaches, installierbares Metronom – Vanilla HTML/CSS/JS, kein Build-Schritt.
 
 - Tempo 30–250 BPM: Slider, ±1-Buttons, Wischfeld (5er-Schritte, rastet auf Vielfache von 5 ein)
-- Tap-Tempo, Taktart (1/4–7/8), Akzent auf Schlag 1, visuelle Schlaganzeige
+- Tap-Tempo, Schläge pro Takt (1–8), Akzent auf Schlag 1, visuelle Schlaganzeige
 - Offline-fähig (Service Worker), Bildschirm bleibt beim Spielen an (Wake Lock)
 
 ## Lokal starten
