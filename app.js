@@ -227,19 +227,7 @@ setBpm(state.bpm);
 renderDots();
 
 if ('serviceWorker' in navigator) {
-  // Hinweis nur bei echtem Update, nicht bei der Erstinstallation
-  const hadController = !!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (hadController) $('update').hidden = false;
-  });
-  $('update').addEventListener('click', () => location.reload());
-
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').then((reg) => {
-      // Beim Zurückkehren in die App (PWA lief im Hintergrund) nach Updates suchen
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') reg.update().catch(() => {});
-      });
-    }).catch(() => {});
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   });
 }
