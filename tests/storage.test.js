@@ -23,7 +23,7 @@ describe('Speichern', () => {
     expect(app.$('accent').checked).toBe(true);
   });
 
-  it('speichert Änderungen an Tempo, Taktart und Akzent', () => {
+  it('speichert Änderungen an Tempo, Schläge und Akzent', () => {
     const app = loadApp();
     app.$('plus').click();
     app.change(app.$('meter'), 6);
