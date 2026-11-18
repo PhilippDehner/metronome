@@ -12,9 +12,19 @@ Einfaches, installierbares Metronom – Vanilla HTML/CSS/JS, kein Build-Schritt.
 python3 -m http.server 8000
 ```
 
+## Tests
+
+Vitest + jsdom: Die Tests laden die echte `index.html` mit `app.js` (AudioContext, Timer und Zeit gemockt).
+
+```sh
+npm install
+npm test
+```
+
 ## Deployment
 
-GitHub Pages via `.github/workflows/pages.yml` (bei Push auf `main`).
+Die CI (`.github/workflows/ci.yml`) testet jeden Push und veröffentlicht `main` auf GitHub Pages –
+nur wenn die Tests grün sind.
 Einmalig in den Repo-Einstellungen: *Settings → Pages → Source: GitHub Actions*.
 
 ## Version
